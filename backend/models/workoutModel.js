@@ -15,6 +15,10 @@ const workoutSchema = new Schema({
   load: {
     type: Number,
     required: true
+  },
+  sets: {
+    type: Number,
+    required: true
   }
 }, { timestamps: true })
 

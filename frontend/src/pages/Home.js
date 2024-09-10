@@ -20,16 +20,22 @@ export default function Home() {
     fetchWorkout()
   }, [dispatch])
 
+  const toggleWorkoutForm = () => {
+    const parentElem = document.querySelector('.home')
+    if (parentElem) {
+      parentElem.classList.toggle('open-modal')
+    }
+  }
 
   return (
     <div className="home">
+      <div className="add" onClick={toggleWorkoutForm}></div>
       <div className="workouts">
         {workouts && workouts.map((workout) => (
           <WorkoutDetails key={workout._id} workout={workout}/>
         ))}
       </div>
-      <WorkoutForm />
+      <WorkoutForm toggleWorkoutForm={toggleWorkoutForm}/>
     </div>
   )
 }
-
