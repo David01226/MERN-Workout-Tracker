@@ -7,9 +7,16 @@ const mongoose = require('mongoose')
 // import routes
 const workoutRoutes = require('./routes/workouts')
 
+const cors = require('cors');
 
 // init express app
 const app = express()
+
+
+// Use CORS to allow requests from your React app
+app.use(cors({
+  origin: 'http://localhost:3000', // or your frontend's URL
+}));
 
 // middleware - called everytime a request is sent to the server
 app.use(express.json())
