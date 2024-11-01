@@ -14,9 +14,7 @@ const app = express()
 
 
 // Use CORS to allow requests from your React app
-app.use(cors({
-  origin: 'http://localhost:3000', // or your frontend's URL
-}));
+app.use(cors());
 
 // middleware - called everytime a request is sent to the server
 app.use(express.json())

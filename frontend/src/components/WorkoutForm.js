@@ -15,7 +15,7 @@ export default function WorkoutForm({ toggleWorkoutForm }) {
 
     const workout = {title, reps, load, sets}
 
-    const response = await fetch('http://localhost:4000/api/workouts', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/workouts`, {
       method: 'POST',
       body: JSON.stringify(workout),
       headers: {
